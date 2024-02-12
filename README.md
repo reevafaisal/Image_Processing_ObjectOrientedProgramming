@@ -1,4 +1,5 @@
 # Image_Processing_ObjectOrientedProgramming
+Language: Python
 
 In this project, we made an image-processing app.
 
