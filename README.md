@@ -22,7 +22,7 @@ NumPy
 Pillow (PIL)
 
 # Using the UI
-After launching the app, the UI will provide options to select and process images with the implemented features. You can choose to apply various filters, adjust brightness, rotate images, and more. Additionally, the premium features and the KNN classifier can be accessed through the GUI, offering an intuitive way to interact with the application's functionalities.
+After launching the app, the UI will provide options to select and process images with the implemented features. You can choose to apply various filters, adjust brightness, rotate images, and more. Additionally, the premium features and the KNN classifier can be accessed through the UI, offering an intuitive way to interact with the application's functionalities.
 
 # Project Structure
 The project is divided into several key parts:
