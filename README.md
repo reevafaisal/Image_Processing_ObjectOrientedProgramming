@@ -13,10 +13,12 @@ The UI file "test_project.py" is available for public view. Due to university po
 
 # Prerequisites
 Python 3
+
 Pip (Python package installer)
 
 # Required Packages
-NumPy
+NumPy 
+
 Pillow (PIL)
 
 # Using the UI
@@ -26,9 +28,14 @@ After launching the app, the UI will provide options to select and process image
 The project is divided into several key parts:
 
 Part 1: Implementation of the RGBImage class to handle basic image storage and manipulation.
+
 Part 2: Introduction of image processing methods in the ImageProcessingTemplate class.
+
 Part 3: Extension of Part 2 to simulate a monetized app with additional costs for processing methods.
+
 Part 4: Further extension to simulate a premium app, adding new methods and a fixed upfront cost.
+
 Part 5: Implementation of a KNN classifier to predict image labels based on provided datasets.
+
 The UI component is developed as a separate Python file, providing an interface to interact with the core functionalities implemented in the project.
 
