@@ -6,17 +6,17 @@ This project is an image processing application designed to demonstrate fundamen
 
 Additionally, I voluntarily built a user interface (UI) (code provided) to interact with the application, making it user-friendly and accessible for users to process images and utilize the app's functionalities.
 
-# Note
+## Note
 The UI file "test_project.py" is available for public view. Due to university policy, I cannot share the assignment-specific backend file, though it is available for viewing upon request.
 
-# Installation:
+# Installation
 
-# Prerequisites
+## Prerequisites
 Python 3
 
 Pip (Python package installer)
 
-# Required Packages
+## Required Packages
 NumPy 
 
 Pillow (PIL)
