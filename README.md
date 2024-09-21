@@ -1,14 +1,14 @@
-# Image_Processing_ComputerVision
-Language: Python
+# Image_Processing_App
+Technologies used: Python, HTML, CSS, Jinja, Flask, Werkzeug, dotenv
 
 # Overview
 This project is an image processing application designed to demonstrate fundamental concepts of digital image processing, including the RGB color model, image manipulation techniques, and machine learning classification with KNN (K-nearest neighbors). The application is split into several parts, covering the basics of how images are stored and manipulated in code, image processing methods, simulation of monetized and premium app features, and the implementation of a KNN classifier to predict image labels.
 
-Additionally, I voluntarily built a user interface (UI) (code provided) to interact with the application, making it user-friendly and accessible for users to process images and utilize the app's functionalities.
+Additionally, I voluntarily built a GUI for this Image Processing application allowing the user to interact with and use the various computer vision techniques imbedded within the app's functionalities. I have also built a CLI for this application if you prefer to look into that instead. The code for both of these files is publicly available. The data science specific functionalities of this project cannot be shared due to university policy, though it is available for viewing upon request. If you would like to interact with the deployable GUI please use this link: 
 
 ## Note
-The UI file "test_project.py" is available for public view. Due to university policy, I cannot share the assignment-specific backend file, though it is available for viewing upon request.
-
+The data science specific functionalities of this project cannot be shared due to university policy, though it is available for viewing upon request.
+**Flask**
 # Installation
 
 ## Prerequisites
