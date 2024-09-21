@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        // JavaScript to show only the relevant options based on processor type
+        function toggleOptions() {
+            var processorType = document.getElementById("processor_type").value;
+            var standardOptions = document.getElementById("standard-options");
+            var premiumOptions = document.getElementById("premium-options");
+            
+            if (processorType === "premium") {
+                standardOptions.style.display = "none";  // Hide standard options
+                premiumOptions.style.display = "block";  // Show premium options
+            } else {
+                standardOptions.style.display = "block";  // Show standard options
+                premiumOptions.style.display = "none";    // Hide premium options
+            }
+        }
+
+        function togglePremiumFields() {
+            const chromaKeyField = document.getElementById("chroma-key-fields");
+            const stickerField = document.getElementById("sticker-fields");
+
+            const operations = document.querySelectorAll('input[name="operations"]:checked');
+            const operationValues = Array.from(operations).map(operation => operation.value);
+
+            // Show or hide chroma key fields based on selection
+            if (operationValues.includes("6")) {
+                chromaKeyField.style.display = "block";
+            } else {
+                chromaKeyField.style.display = "none";
+            }
+
+            // Show or hide sticker fields based on selection
+            if (operationValues.includes("7")) {
+                stickerField.style.display = "block";
+            } else {
+                stickerField.style.display = "none";
+            }
+        }
+
+        function toggleBrightnessField() {
+        const brightnessField = document.getElementById("brightness-field");
+        const selectedOperation = document.querySelector('input[name="operations"]:checked').value;
+
+        if (selectedOperation === '4') { // Assuming '4' corresponds to Adjust Brightness
+            brightnessField.style.display = "block"; // Show brightness input field
+        } else {
+            brightnessField.style.display = "none"; // Hide brightness input field
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="floating-background">
+        <svg class="floating-svg svg-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="rgba(236, 96, 144, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x="10" y="10" width="80" height="80" fill="rgba(99, 175, 245, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="50,10 90,90 10,90" fill="rgba(255, 207, 64, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-4 zigzag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polyline points="0,10 20,30 40,10 60,30 80,10 100,30" stroke="rgba(179, 100, 245, 0.5)" stroke-width="4" fill="none"/>
+        </svg>
+        <svg class="floating-svg svg-5 zigzag-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="10,10 90,10 90,90 10,90" stroke="rgba(255, 207, 64, 0.8)" stroke-width="4" fill="none" />
+        </svg>
+        <svg class="floating-svg svg-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="rgba(128, 128, 255, 0.4)" />
+        </svg>
+        <svg class="floating-svg svg-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="50,5 95,95 5,95" fill="rgba(250, 128, 114, 0.4)" />
+        </svg>
+        <svg class="floating-svg svg-8 outline-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke="rgba(255, 255, 255, 0.5)" stroke-width="3" fill="none" />
+        </svg>
+        <svg class="floating-svg svg-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x="5" y="5" width="90" height="90" fill="rgba(128, 255, 128, 0.4)" />
+        </svg>
+        <!-- Add more SVGs as needed -->
+    </div>
+    <div class="mycontainer">
+        <h1>Process Image</h1>
+    
+        <form action="/process" method="POST" enctype="multipart/form-data">
+            <label for="image">Upload the image:</label>
+            <input type="file" name="image" required><br><br>
+    
+            <!-- Processor Type Dropdown -->
+            <label for="processor_type">Select Processor Type:</label>
+            <select name="processor_type" id="processor_type" onchange="toggleOptions()">
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+            </select><br><br>
+    
+            <!-- Standard options, initially visible -->
+            <div id="standard-options">
+                <h3>Standard Processing Options</h3>
+                {% for key, operation in operations.items() if key in ['1', '2', '3', '4', '5'] %}
+                    <label><input type="radio" name="operations" value="{{ key }}" required onchange="toggleBrightnessField()"> {{ operation.name }} (Cost: ${{ operation.cost }})</label><br>
+                {% endfor %}
+    
+                <!-- Add Brightness Adjustment Input -->
+                <label><input type="radio" name="operations" value="4" onchange="toggleBrightnessField()"> Adjust Brightness</label><br>
+                <div id="brightness-field" style="display: none; margin-left: 20px;">
+                    <label for="brightness">Brightness Level (e.g., -100 to 100):</label>
+                    <input type="number" id="brightness" name="brightness" min="-100" max="100" value="0"><br><br>
+                </div>
+            </div>
+    
+            <!-- Premium options, initially hidden -->
+            <div id="premium-options" style="display: none;">
+                <h3>Premium Processing Options</h3>
+                <label><input type="radio" name="operations" value="6" onchange="togglePremiumFields()"> Premium: Chroma Key</label><br>
+                <div id="chroma-key-fields" style="display: none; margin-left: 20px;">
+                    <label for="background_image">Upload background image for chroma key:</label>
+                    <input type="file" name="background_image"><br>
+                    <label for="chroma_color">Chroma key color (e.g., 255,255,255 for white):</label>
+                    <input type="text" name="chroma_color" placeholder="255,255,255"><br><br>
+                </div>
+    
+                <label><input type="radio" name="operations" value="7" onchange="togglePremiumFields()"> Premium: Add Sticker</label><br>
+                <div id="sticker-fields" style="display: none; margin-left: 20px;">
+                    <label for="sticker_image">Upload sticker image:</label>
+                    <input type="file" name="sticker_image"><br>
+                    <label for="x_pos">Sticker X Position:</label>
+                    <input type="number" name="x_pos" placeholder="0"><br>
+                    <label for="y_pos">Sticker Y Position:</label>
+                    <input type="number" name="y_pos" placeholder="0"><br><br>
+                </div>
+    
+                <label><input type="radio" name="operations" value="8"> Premium: Edge Highlight</label><br>
+            </div>
+    
+            <p><input type="submit" value="Process Image"></p>
+        </form>
+        
+
+        <!-- Display the uploaded and processed images side by side -->
+        <div class="image-container">
+            {% if uploaded_image %}
+                <div class="image-wrapper">
+                    <h2>Uploaded Image:</h2>
+                    <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Uploaded Image">
+                </div>
+            {% endif %}
+
+            {% if processed_image %}
+                <div class="image-wrapper">
+                    <h2>Processed Image:</h2>
+                    <img src="{{ url_for('static', filename='uploads/' + processed_image) }}" alt="Processed Image">
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Display any flash messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

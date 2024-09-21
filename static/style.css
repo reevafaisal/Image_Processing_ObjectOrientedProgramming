@@ -1,0 +1,227 @@
+/* Global Styles */
+body, html {
+    background-color: #000000;
+    color: #a2e0d5;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* Floating SVG Styling */
+.floating-background {
+    position: fixed; /* Ensure it floats over the entire page, even on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents interaction with SVGs */
+    z-index: 10; /* Higher z-index to float over the content */
+}
+
+.floating-svg {
+    position: absolute;
+    animation: floatAnimation 20s ease-in-out infinite; /* General animation */
+    width: 100px; /* Adjust the size of the SVG */
+    opacity: 0.6;
+    z-index: 10; /* Ensure the SVG is above other content */
+}
+
+/* Specific SVG positioning and sizes */
+.svg-1 { top: 10%; left: 5%; animation-duration: 25s; }
+.svg-2 { top: 20%; left: 70%; animation-duration: 20s; }
+.svg-3 { top: 65%; left: 50%; animation-duration: 18s; }
+.svg-4 { top: 85%; left: 10%; animation-duration: 28s; width: 150px; } /* Zigzag */
+.svg-5 { top: 15%; left: 80%; animation-duration: 22s; width: 200px; } /* Zigzag outline */
+.svg-6 { top: 75%; left: 30%; animation-duration: 30s; width: 50px; }
+.svg-7 { top: 45%; left: 60%; animation-duration: 15s; width: 180px; }
+.svg-8 { top: 60%; left: 10%; animation-duration: 24s; width: 120px; } /* Circle outline */
+.svg-9 { top: 5%; left: 40%; animation-duration: 17s; width: 70px; }
+
+/* Add more SVGs as needed */
+
+/* Animation for floating effect */
+@keyframes floatAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-50px) translateX(30px); }
+    50% { transform: translateY(0) translateX(-30px); }
+    75% { transform: translateY(50px) translateX(30px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* Container and Layout */
+.container {
+    background-color: #212121;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: 30px auto;
+    text-align: center;
+    z-index: 1; /* Lower than the SVGs */
+    position: relative;
+}
+
+.mycontainer {
+    background-color: #212121;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: 30px auto;
+    /* text-align: center; */
+    z-index: 1; /* Lower than the SVGs */
+    position: relative;
+    /* font-size: rem */
+}
+
+/* Headers */
+h1 {
+    color: #d419d7; /* Pinkish color for the title */
+    font-family: 'Montserrat', sans-serif; /* Poppins for title font */
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 3rem; /* Bigger font size for the title */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    letter-spacing: 1px; /* Slight spacing for more modern look */
+}
+
+/* Menu Styling */
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 10px 20px;
+}
+
+.menu li a {
+    display: block;
+    padding: 20px;
+    background-color: #d419d7;
+    color: rgb(198, 237, 217);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu li a:hover {
+    background-color: #f99;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.main-button a {
+    background-color: #ec6090;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: #a2e0d5;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.main-button a:hover {
+    background-color: #fff;
+    color: #ec6090;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu li a {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}
+.clearfix {
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; 
+    /* justify-content: space-between; */
+    /* Space between the two sections */
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    max-width: 1200px; /* Set a max width to keep it centered */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Box for the general project information */
+.project-info {
+    /* background-color: #27292a; */
+    padding: 20px;
+    margin: 10px; /* Maintain space around the box */
+    border-radius: 10px;
+    color: #a2e0d5;
+    max-width: 600px; /* Set a maximum width */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ec6090;
+    flex: 1; /* Allow the box to grow within the flex container */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Box for the feature explanation (float to the right) */
+.feature-info {
+    /* background-color: #27292a; */
+    padding: 20px;
+    margin: 10px; /* Maintain space around the box */
+    border-radius: 10px;
+    color: #a2e0d5;
+    max-width: 600px; /* Set a maximum width */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ec6090;
+    flex: 1; /* Allow the box to grow within the flex container */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Clearfix to make sure elements below don't overlap */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.image-container {
+    display: flex; /* Use Flexbox to display images side by side */
+    justify-content: center; /* Center the images and control spacing */
+    align-items: flex-start; /* Align images to the top */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the image comparison section */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.image-container div {
+    width: 45%; /* Reduce the width of each image container to decrease space */
+    text-align: center; /* Center the image and title inside the div */
+    margin: 0 10px; /* Add a smaller margin between the two image containers */
+}
+
+.image-container img {
+    max-width: 100%; /* Make sure the image doesn't overflow its container */
+    height: auto; /* Maintain the image aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners to the images */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow to the images */
+}
+
+/* Title for Images */
+.image-container h2 {
+    color: #d419d7; /* Pinkish color for titles */
+    font-family: 'Montserrat', sans-serif; /* Same font as the main title */
+    font-weight: 600;
+    margin-bottom: 15px;
+}

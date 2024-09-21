@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing App</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Floating SVGs in the background -->
+    <div class="floating-background">
+        <svg class="floating-svg svg-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="rgba(236, 96, 144, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x="10" y="10" width="80" height="80" fill="rgba(99, 175, 245, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="50,10 90,90 10,90" fill="rgba(255, 207, 64, 0.5)" />
+        </svg>
+        <svg class="floating-svg svg-4 zigzag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polyline points="0,10 20,30 40,10 60,30 80,10 100,30" stroke="rgba(179, 100, 245, 0.5)" stroke-width="4" fill="none"/>
+        </svg>
+        <svg class="floating-svg svg-5 zigzag-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="10,10 90,10 90,90 10,90" stroke="rgba(255, 207, 64, 0.8)" stroke-width="4" fill="none" />
+        </svg>
+        <svg class="floating-svg svg-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="rgba(128, 128, 255, 0.4)" />
+        </svg>
+        <svg class="floating-svg svg-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon points="50,5 95,95 5,95" fill="rgba(250, 128, 114, 0.4)" />
+        </svg>
+        <svg class="floating-svg svg-8 outline-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke="rgba(255, 255, 255, 0.5)" stroke-width="3" fill="none" />
+        </svg>
+        <svg class="floating-svg svg-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x="5" y="5" width="90" height="90" fill="rgba(128, 255, 128, 0.4)" />
+        </svg>
+        <!-- Add more SVGs as needed -->
+    </div>
+
+    <div class="container">
+        <h1>Image Processing App</h1>
+        <ul class="menu">
+            <li><a href="/process">Process Image</a></li>
+            <li><a href="/knn">KNN Classifier</a></li>
+        </ul>
+    </div>
+
+    <div class="clearfix">
+        <div class="project-info">
+            <h2>About This Project</h2>
+            <p>
+                I voluntarily built a GUI for this Image Processing application allowing the user to interact with and use the various computer vision techniques imbedded within the app's functionalities.
+                Additionaly, I have also built a CLI for this application if you prefer to look into that instead. The code for both 
+                of these files can be found on this github repo.
+            <p>
+                The data science specific functionalities of this project are hidden from public view due to university policy.
+            </p>
+            <p>
+                Technologies used: Python, HTML, CSS, Jinja, Flask, Werkzeug, dotenv
+            </p>
+        </div>
+    
+        <div class="feature-info">
+            <h2>Process Image & KNN Classifier</h2>
+            <p>
+                The <strong>Process Image</strong> feature allows you to apply a variety of image processing techniques to your images. This feature is monetized and offers two tiers:
+            </p>
+            <ul>
+                <li><strong>Standard Version:</strong> Includes basic operations like negating, grayscale conversion, rotation, and more.</li>
+                <li><strong>Premium Version:</strong> Unlocks advanced features such as Chroma Key, adding stickers, and edge highlighting.</li>
+            </ul>
+            <p>
+                The <strong>KNN Classifier</strong> accepts daytime and nighttime images and predicts which category the image belongs to. It uses a K-Nearest Neighbors (KNN) algorithm to make predictions based on the input image.
+            </p>
+        </div>
+    </div>
+    
+
+</body>
+</html>
+
