@@ -17,6 +17,7 @@ After launching the app, the UI will provide options to select and process image
 ![2](images/Screenshot%202024-09-21%20at%204.32.14%20PM.png)
 
 ## Example 2: KNN Classfier:
+![3](images/Screenshot%202024-09-21%20at%204.34.44%20PM.png)
 
 
 
