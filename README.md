@@ -1,5 +1,5 @@
 # Image_Processing_App
-Technologies used: Python, HTML, CSS, Jinja, Flask, Werkzeug, dotenv
+Technologies used: Python, HTML, CSS, Jinja, Flask, Werkzeug, dotenv, JavaScript
 
 # Overview
 This project is an image processing application designed to demonstrate fundamental concepts of digital image processing, including the RGB color model, image manipulation techniques, and machine learning classification with KNN (K-nearest neighbors). The application is split into several parts, covering the basics of how images are stored and manipulated in code, image processing methods, simulation of monetized and premium app features, and the implementation of a KNN classifier to predict image labels.
@@ -8,7 +8,13 @@ Additionally, I voluntarily built a GUI for this Image Processing application al
 
 ## Note
 The data science specific functionalities of this project cannot be shared due to university policy, though it is available for viewing upon request.
-**Flask**
+
+# Using the GUI
+After launching the app, the UI will provide options to select and process images with the implemented features. You can choose to apply various filters, adjust brightness, rotate images, and more. Additionally, the premium features and the KNN classifier can be accessed through the UI, offering an intuitive way to interact with the application's functionalities.
+
+# Example 1: Using the Premium Add Sticker feature:
+
+
 # Installation
 
 ## Prerequisites
@@ -20,9 +26,6 @@ Pip (Python package installer)
 NumPy 
 
 Pillow (PIL)
-
-# Using the UI
-After launching the app, the UI will provide options to select and process images with the implemented features. You can choose to apply various filters, adjust brightness, rotate images, and more. Additionally, the premium features and the KNN classifier can be accessed through the UI, offering an intuitive way to interact with the application's functionalities.
 
 # Project Structure
 The project is divided into several key parts:
