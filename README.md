@@ -1,4 +1,4 @@
-# Image_Processing_App
+# Image Processing App
 Technologies used: Python, HTML, CSS, Jinja, Flask, Werkzeug, dotenv, JavaScript
 
 # Overview
