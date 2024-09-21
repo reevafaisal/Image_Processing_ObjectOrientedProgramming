@@ -13,6 +13,8 @@ The data science specific functionalities of this project cannot be shared due t
 After launching the app, the UI will provide options to select and process images with the implemented features. You can choose to apply various filters, adjust brightness, rotate images, and more. Additionally, the premium features and the KNN classifier can be accessed through the UI, offering an intuitive way to interact with the application's functionalities.
 
 # Example 1: Using the Premium Add Sticker feature:
+![1](images/Screenshot%202024-09-21%20at%204.32.02%20PM.png)
+
 
 
 # Installation
