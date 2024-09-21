@@ -14,6 +14,7 @@ After launching the app, the UI will provide options to select and process image
 
 # Example 1: Using the Premium Add Sticker feature:
 ![1](images/Screenshot%202024-09-21%20at%204.32.02%20PM.png)
+![2](images/Screenshot%202024-09-21%20at%204.32.14%20PM.png)
 
 
 
